@@ -42,7 +42,7 @@ public class Main implements RequestHandler<Map<String, Object>, Map<String, Str
             String json = objectMapper.writeValueAsString(UrlData);
             PutObjectRequest request = PutObjectRequest.builder().
                     bucket("bucket-storage-url-shortener").
-                    key(shortUrlCode + "json").
+                    key(shortUrlCode + ".json").
                     build();
 
             s3Client.putObject(request, RequestBody.fromString(json));
